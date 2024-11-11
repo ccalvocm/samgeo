@@ -16,8 +16,8 @@ class SAM(object):
 
     def get_tiles(self):
         files=os.listdir(self.root)
-        files=[f for f in files if f.endswith('.tif')]
-        return files
+        files=[f for f in files if (f.endswith('.tif')) & ('tile_' in f) ]
+        return files[111:]
 
     def plots(self,image):
         m = leafmap.Map(center=[29.676840, -95.369222], zoom=19)
